@@ -1,7 +1,18 @@
 let playerScore = 0;
 let computerScore = 0;
 
+const rockBtn = document.querySelector('#rockButton');
+const paperBtn = document.querySelector('#paperButton');
+const scissorsBtn = document.querySelector('#scissorsButton');
 
+rockBtn.addEventListener("click", () => clickButton("rock"));
+paperBtn.addEventListener("click", () => clickButton("paper"));
+scissorsBtn.addEventListener("click", () => clickButton("scissors"));
+
+
+function clickButton(buttonChoice) {
+    playRound(buttonChoice, getComputerChoice());
+}
 // Returns a random choice for the computer
 function getComputerChoice() {
     let choices = ["ROCK", "PAPER", "SCISSORS"];
@@ -22,40 +33,39 @@ function playRound(playerSelection, computerSelection) {
         case "ROCK":
             if (computerSelection === "SCISSORS") {
                 playerScore++;
-                return "Player: " + playerSelection + " - Computer: " + computerSelection + " - Congratulations, Player won!";
+                console.log("Player: " + playerSelection + " - Computer: " + computerSelection + " - Congratulations, Player won!");
             } else if (playerSelection === computerSelection) {
-                return "Computer and Player both chose: " + playerSelection + " - Noone wins!";
+                console.log("Computer and Player both chose: " + playerSelection + " - Noone wins!");
             } else {
                 computerScore++;
-                return "Player: " + playerSelection + " - Computer: " + computerSelection + " - Oh no :( Player lost";
+                console.log("Player: " + playerSelection + " - Computer: " + computerSelection + " - Oh no :( Player lost");
             }
             break;
 
         case "PAPER":
             if (computerSelection === "ROCK") {
                 playerScore++;
-                return "Player: " + playerSelection + " - Computer: " + computerSelection + " - Congratulations, Player won!";
+                console.log("Player: " + playerSelection + " - Computer: " + computerSelection + " - Congratulations, Player won!");
             } else if (playerSelection === computerSelection) {
-                return "Computer and Player both chose: " + playerSelection + " - Noone wins!";
+                console.log("Computer and Player both chose: " + playerSelection + " - Noone wins!");
             } else {
                 computerScore++;
-                return "Player: " + playerSelection + " - Computer: " + computerSelection + " - Oh no :( Player lost";
+                console.log("Player: " + playerSelection + " - Computer: " + computerSelection + " - Oh no :( Player lost");
             }
             break;
 
         case "SCISSORS":
             if (computerSelection === "PAPER") {
                 playerScore++;
-                return "Player: " + playerSelection + " - Computer: " + computerSelection + " - Congratulations, Player won!";
+                console.log("Player: " + playerSelection + " - Computer: " + computerSelection + " - Congratulations, Player won!");
             } else if (playerSelection === computerSelection) {
-                return "Computer and Player both chose: " + playerSelection + " - Noone wins!";
+                console.log("Computer and Player both chose: " + playerSelection + " - Noone wins!");
             } else {
                 computerScore++;
-                return "Player: " + playerSelection + " - Computer: " + computerSelection + " - Oh no :( Player lost";
+                console.log("Player: " + playerSelection + " - Computer: " + computerSelection + " - Oh no :( Player lost");
             }
             break;
     }
 }
 
 // Runs the game
-game();
