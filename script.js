@@ -2,7 +2,6 @@ let playerScore = 0;
 let computerScore = 0;
 
 
-
 // Returns a random choice for the computer
 function getComputerChoice() {
     let choices = ["ROCK", "PAPER", "SCISSORS"];
