@@ -1,6 +1,11 @@
 let playerScore = 0;
 let computerScore = 0;
 
+const playerScoreLabel = document.querySelector("#playerScore");
+const computerScoreLabel = document.querySelector("#computerScore");
+
+
+
 const rockBtn = document.querySelector('#rockButton');
 const paperBtn = document.querySelector('#paperButton');
 const scissorsBtn = document.querySelector('#scissorsButton');
@@ -12,7 +17,22 @@ scissorsBtn.addEventListener("click", () => clickButton("scissors"));
 
 function clickButton(buttonChoice) {
     playRound(buttonChoice, getComputerChoice());
+    playerScoreLabel.textContent = "Player: " + playerScore;
+    computerScoreLabel.textContent = "Computer: " + computerScore;
+    if (playerScore === 5 || computerScore === 5) {
+        endRound();
+    }
 }
+
+function endRound() {
+    console.log("xxx Wins!");
+    playerScore = 0;
+    computerScore = 0;
+    playerScoreLabel.textContent = "Player: " + playerScore;
+    computerScoreLabel.textContent = "Computer: " + computerScore;
+}
+
+
 // Returns a random choice for the computer
 function getComputerChoice() {
     let choices = ["ROCK", "PAPER", "SCISSORS"];
