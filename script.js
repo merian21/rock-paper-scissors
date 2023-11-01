@@ -1,22 +1,7 @@
 let playerScore = 0;
 let computerScore = 0;
 
-// Starts a 5 round game, displaying winners and loosers at the end
-// and keeping score
-function game() {
-    for (let i = 0; i < 5; i++) {
-        console.log(playRound(prompt("Choose between Rock, Paper and Scissors: "), getComputerChoice()));
-    }
 
-    console.log("Player: " + playerScore + " - Computer: " + computerScore);
-    if (playerScore > computerScore) {
-        console.log("Player wins!");
-    } else if (playerScore === computerScore) {
-        console.log("It's a tie!");
-    } else {
-        console.log("Computer wins!")
-    }
-}
 
 // Returns a random choice for the computer
 function getComputerChoice() {
