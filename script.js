@@ -30,6 +30,11 @@ function endRound() {
     computerScore = 0;
     playerScoreLabel.textContent = "Player: " + playerScore;
     computerScoreLabel.textContent = "Computer: " + computerScore;
+    if (playerScore > computerScore) {
+        winnerLabel.textContent = "Congratulations, Player wins!";
+    } else {
+        winnerLabel.textContent = "Oh no! Player loses!";
+    }
 }
 
 
